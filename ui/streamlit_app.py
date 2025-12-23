@@ -1,7 +1,14 @@
 """Streamlit app entry point."""
 import streamlit as st
 import sys
+import os
 from pathlib import Path
+
+# Load environment variables from .env file if it exists
+from dotenv import load_dotenv
+env_path = Path(__file__).parent / '.env'
+if env_path.exists():
+    load_dotenv(env_path)
 
 # Add current directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -24,6 +31,12 @@ render_sidebar()
 # Main content
 st.title("📞 Voice Intelligence Platform")
 st.markdown("### E-commerce Support Call Analytics")
+
+# Show API URL configuration
+from lib.config import API_BASE_URL
+with st.expander("⚙️ API Configuration", expanded=False):
+    st.info(f"**API Base URL:** `{API_BASE_URL}`")
+    st.caption("To change this, set `STREAMLIT_API_BASE_URL` or `API_BASE_URL` environment variable")
 
 st.markdown("""
 Welcome to the Voice Intelligence Platform demo. This application provides:

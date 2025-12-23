@@ -7,7 +7,6 @@ engine = create_engine(
     settings.DATABASE_URL,
     pool_pre_ping=True,
     echo=settings.DEBUG,
-    # Use psycopg (v3) if available, fallback to psycopg2
     connect_args={"connect_timeout": 10},
 )
 

@@ -22,10 +22,16 @@ app = FastAPI(
     description="Real-Time Voice Intelligence for E-commerce Support"
 )
 
-# CORS middleware (for Streamlit local dev)
+# CORS middleware (for Streamlit local dev and deployed UI)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8501", "http://127.0.0.1:8501"],  # Streamlit default
+    allow_origins=[
+        "http://localhost:8501",
+        "http://127.0.0.1:8501",
+        # Add your deployed Streamlit URL here if needed
+        # "https://your-app.onrender.com",
+        # "https://*.streamlit.app",  # Streamlit Cloud
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

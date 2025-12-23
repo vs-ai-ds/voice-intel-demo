@@ -13,12 +13,21 @@ Voice Intelligence Platform Streamlit console application.
    pip install -r ui/requirements-ui.txt
    ```
 
-2. **Configure API URL (optional):**
-   Create `.env` file in `ui/` directory:
-   ```
-   STREAMLIT_API_BASE_URL=http://localhost:8000
-   ```
-   Default is `http://localhost:8000` if not set.
+2. **Configure API URL:**
+   
+   **For local development:**
+   - Default is `http://localhost:8000` (no configuration needed)
+   
+   **For production/deployed backend:**
+   - Set environment variable (either name works):
+     - `STREAMLIT_API_BASE_URL=https://your-backend.onrender.com` (preferred)
+     - `API_BASE_URL=https://your-backend.onrender.com` (also supported)
+   - Or create `.env` file in `ui/` directory:
+     ```
+     API_BASE_URL=https://your-backend.onrender.com
+     ```
+   
+   **Note**: The API URL must include the protocol (`http://` or `https://`) and should not have a trailing slash.
 
 3. **Start backend API:**
    ```bash
