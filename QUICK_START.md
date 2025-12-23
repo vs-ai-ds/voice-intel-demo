@@ -6,14 +6,26 @@
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+# Install backend dependencies
+pip install -r requirements-backend.txt
+
+# Install UI dependencies (optional, if using Streamlit)
+cd ui
+pip install -r requirements-ui.txt
+cd ..
 ```
 
 **Unix/Mac:**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+# Install backend dependencies
+pip install -r requirements-backend.txt
+
+# Install UI dependencies (optional, if using Streamlit)
+cd ui
+pip install -r requirements-ui.txt
+cd ..
 ```
 
 ## 2. Configure Database

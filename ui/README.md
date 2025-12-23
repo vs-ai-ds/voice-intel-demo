@@ -6,7 +6,11 @@ Voice Intelligence Platform Streamlit console application.
 
 1. **Install dependencies:**
    ```bash
-   pip install -r ../requirements.txt
+   # Install UI dependencies
+   pip install -r requirements-ui.txt
+   
+   # Or from project root
+   pip install -r ui/requirements-ui.txt
    ```
 
 2. **Configure API URL (optional):**
